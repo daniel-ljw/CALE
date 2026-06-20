@@ -1,0 +1,20 @@
+# Core
+numpy
+pandas
+scipy
+statsmodels
+
+# Modeling (Gompertz MLE via automatic differentiation)
+autograd
+
+# Plotting
+matplotlib
+seaborn
+adjustText
+
+# Mapping (world / aging maps)
+geopandas
+geodatasets
+
+# Data download (UN SDG / World Bank APIs)
+requests
