@@ -60,25 +60,24 @@ Data pre-processing is done in **Stata** (`.do`); modeling, analysis, and visual
 | File | Produces |
 |------|----------|
 | `code/f2_gompertz_fit.ipynb` | Country-specific and aggregate Gompertz hazard / survival fits (Fig. 2a–c). |
-| `code/f2_integ.ipynb` | Integrated Gompertz fits across the three walking definitions; combined survival/hazard panels. |
-| `code/f2_gompertz_decade.ipynb` | Gompertz fits summarized by age decade. |
+| `code/f2_gompertz_decade.ipynb` | Gompertz fits summarized by age decade. (Supplementary Information)|
 | `code/f2_worldmap.ipynb` | World map of mobility aging, colored by continent (Fig. 2 / world map). |
 
 ### Figure 3 — CALE and the global burden of mobility loss
 | File | Produces |
 |------|----------|
 | `code/f3_CALE.ipynb` | CALE vs. UN life expectancy by country and the mobility gap (Fig. 3a–b). |
-| `code/f3_sub.ipynb` | CALE by subgroup — sex and urban/rural residence (Fig. 3 subpanels). |
+| `code/f3_sub.ipynb` | CALE by subgroup — sex and urban/rural residence (Fig. 3 c-e). |
 
 ### Figure 4 — Disease and multimorbidity
 | File | Produces |
 |------|----------|
 | `code/f4_disease_timevary.ipynb` | Time-varying onset and post-onset mobility risk and CALE loss for individual diseases and multimorbidity (Fig. 4). |
 
-### Figure 5 — Population health correlates
+### SI 5 — Population health correlates
 | File | Produces |
 |------|----------|
-| `code/f5_reg3var.ipynb` | OLS of CALE on each SDG Goal 3 indicator, controlling for log population, share aged 65+, and continent (Fig. 5 / Supplementary). |
+| `code/f5_reg3var.ipynb` | OLS of CALE on each SDG Goal 3 indicator, controlling for log population, share aged 65+, and continent (Supplementary). |
 
 > Other exploratory notebooks and intermediate outputs may appear under `code/`; the table above lists the notebooks corresponding to the reported figures.
 
