@@ -22,29 +22,22 @@ The project harmonizes longitudinal health-and-aging cohorts covering **193,731 
 ```
 CALE/
 ├─ code/            # Analysis notebooks (Python) + Stata cleaning scripts (.do)
-├─ data/            # Input / intermediate data (git-ignored — see Data section)
-├─ results/         # Result tables and model outputs (git-ignored)
-├─ figures/         # Figure image outputs (git-ignored)
+├─ data/            # Input / intermediate data 
 ├─ requirements.txt # Python dependencies
 ├─ LICENSE          # MIT
 └─ README.md
 ```
 
-`data/`, `results/`, and `figures/` are excluded from version control via `.gitignore` because the underlying cohort data are access-restricted and the outputs are large.
-
-**Paths.** All notebooks use paths relative to the repository root (`../data/…`, `../results/…`, `../figures/…`). To run them, place the input files under `CALE/data/` (create `data/`, `results/`, and `figures/` if absent); the notebooks create result/figure subfolders automatically.
-
 ---
 
 ## Code map
 
-Data pre-processing is done in **Stata** (`.do`); modeling, analysis, and visualization in **Python** (Jupyter notebooks). Notebook names are keyed to the manuscript figures (`f1`–`f5`).
+Data pre-processing is done in **Stata** (`.do`); modeling, analysis, and visualization in **Python** (Jupyter notebooks). Notebook names are keyed to the manuscript figures (`f1`–`f4`).
 
 ### Data preparation
 | File | Purpose |
 |------|---------|
-| `code/20260217clean.do` | Stata harmonization and cleaning of the pooled cohort data into the analysis files (e.g. `global36.dta`). |
-| `code/sdg0504.ipynb` | Download UN SDG global-indicator history for the study countries via the UN SDG API (`data/iso36.csv`). |
+| `code/sdg0504.ipynb` | Download UN SDG global-indicator history for the study countries via the UN SDG API (`data/iso40.csv`). |
 | `code/wb.ipynb` | Download World Bank indicators matched to each country's last survey year. |
 | `code/s1_basic_chara.ipynb` | Export the analysis sample and build the dataset-level basic-characteristics table (Supplementary). |
 
@@ -67,7 +60,7 @@ Data pre-processing is done in **Stata** (`.do`); modeling, analysis, and visual
 | File | Produces |
 |------|----------|
 | `code/f3_CALE.ipynb` | CALE vs. UN life expectancy by country and the mobility gap (Fig. 3a–b). |
-| `code/f3_sub.ipynb` | CALE by subgroup — sex and urban/rural residence (Fig. 3 c-e). |
+| `code/f3_sub.ipynb` | CALE by subgroup — Global North & Global South, urban/rural residence, and sex difference (Fig. 3 c-e). |
 
 ### Figure 4 — Disease and multimorbidity
 | File | Produces |
@@ -92,9 +85,9 @@ Data pre-processing is done in **Stata** (`.do`); modeling, analysis, and visual
 pip install -r requirements.txt
 ```
 
-Core Python packages: `numpy`, `pandas`, `matplotlib`, `scipy`, `lifelines` (Gompertz / survival modeling). Mapping notebooks additionally use `geopandas` with Natural Earth boundaries (1:110 m).
+Core Python packages: `numpy`, `pandas`, `matplotlib`, `scipy`, `lifelines`. Mapping notebooks additionally use `geopandas` with Natural Earth boundaries (1:110 m).
 
-> **Paths.** Notebooks use paths relative to the repository root (`../data/…`, `../results/…`, `../figures/…`), resolved from the `code/` directory. Place input data under `data/` as described above; no per-notebook path editing is required.
+> **Paths.** Notebooks use paths relative to the repository root (`../data/…`), resolved from the `code/` directory. Place input data under `data/` as described above; no per-notebook path editing is required.
 
 ---
 
@@ -125,7 +118,7 @@ The analysis combines location-based mobility data with harmonized longitudinal 
 - UN Sustainable Development Goals data portal — https://unstats.un.org/sdgs/dataportal/database
 - World Bank Open Data (downloaded by `code/wb.ipynb`)
 
-After obtaining the cohort data, the Stata cleaning script produces the harmonized analysis file used by the notebooks (e.g. `data/global36.dta`).
+After obtaining the cohort data, the Stata cleaning script produces the harmonized analysis file used by the notebooks (e.g. `data/global40.dta`).
 
 ---
 
@@ -134,12 +127,3 @@ After obtaining the cohort data, the Stata cleaning script produces the harmoniz
 Code is released under the [MIT License](LICENSE). The third-party datasets listed above are governed by their own access agreements and licenses.
 
 ---
-
-## Citation
-
-> Citation details, the published/preprint DOI, and the canonical repository URL will be added on acceptance.
-
-```
-<Authors>. Cross-national disparities in mobility independence during aging. <Journal/Preprint>, <Year>.
-Code: https://github.com/<your-username>/CALE
-```
